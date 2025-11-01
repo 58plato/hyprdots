@@ -11,6 +11,10 @@
 - 🔧 **Config manager**
 - 🔄 **Auto-update script**
 
+## 🎥 Demo Video
+
+[![Hyprdots Demo](https://i.imgur.com/u3Web0m.gif)](https://imgur.com/a/u3Web0m)
+
 ## 🚀 Installation
 
 git clone https://github.com/58plato/hyprdots.git
