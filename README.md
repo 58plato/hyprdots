@@ -14,7 +14,7 @@ A clean and modern Hyprland window manager configuration for Arch Linux.
 
 ### Method 1: Auto Install (Recommended)
 ```bash
-git clone https://github.com/YOUR_USERNAME/hyprland-config.git
+git clone https://github.com/58plato/hyprland-config.git
 cd hyprland-config
 chmod +x install.sh
 ./install.sh
