@@ -1,75 +1,28 @@
-# 🚀 Hyprdots
+# Hyprdots
 
-**Modern Hyprland configuration for Arch Linux.**
+Modern Hyprland configuration for Arch Linux.
 
-## ✨ Features
+## Features
 
-- 🎨 **Catppuccin Mocha theme**
-- ⚡ **Performance mode toggle**
-- 🖼️ **Wallpaper selector**
-- ⌨️ **Multiple keyboard layouts**
-- 📱 **Touchpad gestures**
-- 🔧 **Config manager**
-- 🔄 **Auto-update script**
+- 🎨 Catppuccin Mocha theme
+- ⚡ Performance mode toggle  
+- 🖼️ Wallpaper selector with previews
+- ⌨️ Multiple keyboard layouts
+- 🔧 Config manager with backups
+- 🔄 Auto-update script
 
-## 🚀 Installation
+## Installation
 
 ```bash
 git clone https://github.com/58plato/hyprdots.git
 cd hyprdots
-chmod +x install.sh
 ./install.sh
 
-🔄 Update
-bash
 
+## 🔄 Update
+
+To update your Hyprdots configuration:
+
+```bash
 cd hyprdots
 ./update.sh
-
-🎯 Keybinds
-
-    Super + Enter: Terminal
-
-    Super + R: App launcher
-
-    Print: Screenshot + edit
-
-    Super + Shift + Print: Area screenshot + edit
-
-    Super + Shift + P: Performance mode
-
-🛠️ Scripts
-
-    hypr-manager.sh: Config manager
-
-    wallpaper.sh: Wallpaper selector
-
-    performance-mode.sh: Performance toggle
-
-    update.sh: Auto-update
-
-🎨 Customization
-
-Edit ~/.config/hypr/hyprland.conf to change keyboard layout and other settings.
-📁 File Structure
-text
-
-hyprdots/
-├── install.sh
-├── update.sh
-├── hyprland.conf
-├── scripts/
-├── waybar/
-├── kitty/
-├── mako/
-└── wofi/
-
-❓ FAQ
-
-    Change keyboard layout in hyprland.conf
-
-    Install grim, slurp, swappy for screenshots
-
-    Make scripts executable if not working
-
-    Backups created in ~/.config/hyprdots-backup-DATE/
