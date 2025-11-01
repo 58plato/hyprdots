@@ -11,11 +11,9 @@
 - 🔧 **Config manager**
 - 🔄 **Auto-update script**
 
-## 🎥 Demo Video
+## 🖼️ Screenshot
 
-![Hyprdots Demo](demo_vid.mp4)
-
-*Click the video to play*
+![Hyprdots Desktop](desktop.png)
 
 ## 🚀 Installation
 
