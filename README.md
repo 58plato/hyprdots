@@ -18,6 +18,13 @@ git clone https://github.com/58plato/hyprdots.git
 cd hyprdots
 ./install.sh
 
+
+
+
+
+
+
+
 ## 🔄 Update
 
 To update your Hyprdots configuration:
