@@ -17,3 +17,11 @@ Modern Hyprland configuration for Arch Linux.
 git clone https://github.com/58plato/hyprdots.git
 cd hyprdots
 ./install.sh
+
+## 🔄 Update
+
+To update your Hyprdots configuration:
+
+```bash
+cd hyprdots
+./update.sh
