@@ -20,6 +20,43 @@ print_status() { echo -e "${GREEN}[✓]${NC} $1"; }
 print_warning() { echo -e "${YELLOW}[!]${NC} $1"; }
 print_error() { echo -e "${RED}[✗]${NC} $1"; }
 
+# Ask for keyboard layout
+select_keyboard_layout() {
+    echo -e "${YELLOW}Select your keyboard layout:${NC}"
+    echo "1) Turkish (tr)"
+    echo "2) US English (us)"
+    echo "3) Other (manual input)"
+    echo ""
+    
+    read -p "Enter your choice (1-3): " layout_choice
+    
+    case $layout_choice in
+        1)
+            KEYBOARD_LAYOUT="tr"
+            echo -e "${GREEN}Selected: Turkish keyboard${NC}"
+            ;;
+        2)
+            KEYBOARD_LAYOUT="us"
+            echo -e "${GREEN}Selected: US English keyboard${NC}"
+            ;;
+        3)
+            read -p "Enter your keyboard layout (e.g., de, fr, es): " KEYBOARD_LAYOUT
+            if [ -z "$KEYBOARD_LAYOUT" ]; then
+                KEYBOARD_LAYOUT="us"
+                echo -e "${YELLOW}Using default: US English${NC}"
+            else
+                echo -e "${GREEN}Selected: $KEYBOARD_LAYOUT keyboard${NC}"
+            fi
+            ;;
+        *)
+            KEYBOARD_LAYOUT="us"
+            echo -e "${YELLOW}Invalid choice, using default: US English${NC}"
+            ;;
+    esac
+    
+    echo ""
+}
+
 # Install yay if not present
 install_yay() {
     if ! command -v yay &> /dev/null; then
@@ -45,7 +82,6 @@ install_packages() {
         swww \
         wofi \
         kitty \
-        pipewire\
         nemo \
         grim \
         slurp \
@@ -91,6 +127,19 @@ create_directories() {
     print_status "Directories created"
 }
 
+# Update keyboard layout in hyprland config
+update_keyboard_layout() {
+    print_status "Setting keyboard layout to: $KEYBOARD_LAYOUT"
+    
+    if [ -f "hyprland.conf" ]; then
+        # Create a temporary file with updated layout
+        sed "s/kb_layout = tr/kb_layout = $KEYBOARD_LAYOUT/g" hyprland.conf > ~/.config/hypr/hyprland.conf
+        print_status "Keyboard layout updated in config"
+    else
+        print_warning "hyprland.conf not found, skipping layout update"
+    fi
+}
+
 # Copy configuration files
 copy_configs() {
     print_status "Copying configuration files..."
@@ -101,11 +150,10 @@ copy_configs() {
         exit 1
     fi
     
-    # Copy hyprland config and scripts
-    if [ -f "hyprland.conf" ]; then
-        cp hyprland.conf ~/.config/hypr/
-    fi
+    # Update and copy hyprland config with correct keyboard layout
+    update_keyboard_layout
     
+    # Copy scripts
     if [ -d "scripts" ]; then
         cp scripts/* ~/.config/hypr/scripts/ 2>/dev/null || true
     fi
@@ -161,6 +209,8 @@ show_completion() {
     echo "   Super + Shift + Print: Area screenshot + edit"
     echo "   Super + Shift + P: Performance mode toggle"
     echo ""
+    echo "⌨️  Keyboard layout: $KEYBOARD_LAYOUT"
+    echo ""
     echo "🛠️  Useful scripts:"
     echo "   ~/.config/hypr/scripts/hypr-manager.sh  - Config backup/restore"
     echo "   ~/.config/hypr/scripts/wallpaper.sh     - Wallpaper selector"
@@ -174,6 +224,7 @@ show_completion() {
 main() {
     echo -e "${YELLOW}Starting installation...${NC}"
     
+    select_keyboard_layout
     install_yay
     install_packages
     create_directories
