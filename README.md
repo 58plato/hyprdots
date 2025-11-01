@@ -1,120 +1,75 @@
-# Hyprdots - Modern Hyprland Dotfiles
+# 🚀 Hyprdots
 
-A clean and performant Hyprland configuration for Arch Linux with Turkish keyboard support.
+**Modern Hyprland configuration for Arch Linux.**
 
-## Features
+## ✨ Features
 
-- Catppuccin Mocha theme throughout
-- Performance mode toggle (disables animations)
-- Easy wallpaper selector with previews
-- Multiple keyboard layouts supported
-- Touchpad gestures and smooth scrolling
-- Config manager with backup/restore
-- Auto-update script for easy maintenance
-- Minimal & Fast optimized for productivity
+- 🎨 **Catppuccin Mocha theme**
+- ⚡ **Performance mode toggle**
+- 🖼️ **Wallpaper selector**
+- ⌨️ **Multiple keyboard layouts**
+- 📱 **Touchpad gestures**
+- 🔧 **Config manager**
+- 🔄 **Auto-update script**
 
-## Quick Install
+## 🚀 Installation
 
+```bash
 git clone https://github.com/58plato/hyprdots.git
 cd hyprdots
 chmod +x install.sh
 ./install.sh
 
-The installer will ask for your keyboard layout during installation.
-
-## Updating
-
-To update your Hyprdots configuration to the latest version:
+🔄 Update
+bash
 
 cd hyprdots
 ./update.sh
 
-What the update script does:
-- Creates backup of your current config
-- Pulls latest changes from GitHub
-- Preserves your customizations (keyboard layout, performance mode, etc.)
-- Updates config files automatically
-- Reloads services (Hyprland, Waybar, Mako)
-- Optional system package updates
+🎯 Keybinds
 
-Manual Update (if you prefer):
-cd hyprdots
-git pull origin main
-cp -r hyprland.conf ~/.config/hypr/
-cp -r scripts/* ~/.config/hypr/scripts/
-# Restart Hyprland or run: hyprctl reload
+    Super + Enter: Terminal
 
-## Keybinds
+    Super + R: App launcher
 
-Super + Enter - Terminal (Kitty)
-Super + R - App Launcher (Wofi)
-Print - Full screenshot + edit
-Super + Shift + Print - Area screenshot + edit
-Super + Shift + P - Performance mode toggle
-Super + 1-10 - Switch workspaces
-Super + Shift + 1-10 - Move window to workspace
+    Print: Screenshot + edit
 
-## Scripts
+    Super + Shift + Print: Area screenshot + edit
 
-hypr-manager.sh - Backup, restore, edit config with auto-reload
-wallpaper.sh - Select wallpapers with Wofi + preview
-performance-mode.sh - Toggle between performance and normal modes
-update.sh - Update to latest version with backup protection
+    Super + Shift + P: Performance mode
 
-## Customization
+🛠️ Scripts
 
-Wallpapers:
-Add your wallpapers to ~/Pictures/wallpaper/ then run:
-~/.config/hypr/scripts/wallpaper.sh
+    hypr-manager.sh: Config manager
 
-Performance Mode:
-Toggle animations and effects for better performance:
-~/.config/hypr/scripts/performance-mode.sh
+    wallpaper.sh: Wallpaper selector
 
-Keyboard Layout:
-Change keyboard layout by editing:
-nano ~/.config/hypr/hyprland.conf
-Find: kb_layout = us
-Change to your preferred layout
+    performance-mode.sh: Performance toggle
 
-## File Structure
+    update.sh: Auto-update
+
+🎨 Customization
+
+Edit ~/.config/hypr/hyprland.conf to change keyboard layout and other settings.
+📁 File Structure
+text
 
 hyprdots/
-├── install.sh (Auto-installer)
-├── update.sh (Auto-update script)
-├── hyprland.conf (Main Hyprland config)
+├── install.sh
+├── update.sh
+├── hyprland.conf
 ├── scripts/
-│   ├── hypr-manager.sh (Config manager)
-│   ├── wallpaper.sh (Wallpaper selector)
-│   └── performance-mode.sh (Performance toggle)
-├── waybar/ (Status bar config)
-├── kitty/ (Terminal config)
-├── mako/ (Notifications config)
-└── wofi/ (App launcher config)
+├── waybar/
+├── kitty/
+├── mako/
+└── wofi/
 
-## FAQ
+❓ FAQ
 
-Q: How to change keyboard layout?
-A: Edit ~/.config/hypr/hyprland.conf and change kb_layout = us to your preferred layout.
+    Change keyboard layout in hyprland.conf
 
-Q: Screenshots not working?
-A: Make sure grim, slurp, and swappy are installed.
+    Install grim, slurp, swappy for screenshots
 
-Q: Performance mode not switching?
-A: Check if scripts are executable: chmod +x ~/.config/hypr/scripts/*.sh
+    Make scripts executable if not working
 
-Q: How to revert after update?
-A: The update script creates backups in ~/.config/hyprdots-backup-DATE/
-
-Q: Update script says "Not a git repository"?
-A: Make sure you're running it from the hyprdots directory you cloned.
-
-## Contributing
-
-Feel free to open issues or submit pull requests!
-
-## License
-
-MIT License
-
-Don't forget to star the repo if you find it useful!
+    Backups created in ~/.config/hyprdots-backup-DATE/
