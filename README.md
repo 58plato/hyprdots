@@ -13,7 +13,9 @@
 
 ## 🎥 Demo Video
 
-[![Hyprdots Demo](https://img.youtube.com/vi/O6V_a3Zcrns/0.jpg)](https://youtu.be/O6V_a3Zcrns)
+![Hyprdots Demo](demo_vid.mp4)
+
+*Click the video to play*
 
 ## 🚀 Installation
 
