@@ -13,48 +13,70 @@
 
 ## 🚀 Installation
 
-```bash
 git clone https://github.com/58plato/hyprdots.git
 cd hyprdots
 chmod +x install.sh
 ./install.sh
-🔄 Update
+
+## 🔄 Update
 
 To update your Hyprdots configuration:
-bash
 
 cd hyprdots
 ./update.sh
-Update script features:
 
-    ✅ Creates backup of your current config
+**Update script features:**
+- ✅ Creates backup of your current config
+- ✅ Pulls latest changes from GitHub
+- ✅ Preserves your keyboard layout
+- ✅ Updates config files automatically
+- ✅ Reloads Hyprland and services
 
-    ✅ Pulls latest changes from GitHub
+**Manual update:**
+cd hyprdots
+git pull origin main
+cp -r hyprland.conf ~/.config/hypr/
+cp -r scripts/* ~/.config/hypr/scripts/
+hyprctl reload
 
-    ✅ Preserves your keyboard layout
+## 🎯 Keybinds
 
-    ✅ Updates config files automatically
+- **Super + Enter**: Terminal
+- **Super + R**: App launcher
+- **Print**: Screenshot + edit
+- **Super + Shift + Print**: Area screenshot + edit
+- **Super + Shift + P**: Performance mode
 
-    ✅ Reloads Hyprland and services
+## 🛠️ Scripts
 
-🎯 Keybinds
+- **hypr-manager.sh**: Config manager
+- **wallpaper.sh**: Wallpaper selector
+- **performance-mode.sh**: Performance toggle
+- **update.sh**: Auto-update
 
-    Super + Enter: Terminal
+## 🎨 Customization
 
-    Super + R: App launcher
+Edit **~/.config/hypr/hyprland.conf** to change keyboard layout and other settings.
 
-    Print: Screenshot + edit
+## 📁 File Structure
 
-    Super + Shift + Print: Area screenshot + edit
+hyprdots/
+├── install.sh
+├── update.sh
+├── hyprland.conf
+├── scripts/
+├── waybar/
+├── kitty/
+├── mako/
+└── wofi/
 
-    Super + Shift + P: Performance
+## ❓ FAQ
 
-🛠️ Scripts
+- **Change keyboard layout** in hyprland.conf
+- **Install grim, slurp, swappy** for screenshots
+- **Make scripts executable** if not working
+- **Backups created** in ~/.config/hyprdots-backup-DATE/
 
-    hypr-manager.sh: Config manager
+## 📄 License
 
-    wallpaper.sh: Wallpaper selector
-
-    performance-mode.sh: Performance toggle
-
-    update.sh: Auto-update
+**MIT License**
