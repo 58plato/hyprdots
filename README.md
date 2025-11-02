@@ -8,7 +8,6 @@
 - ⚡ **Performance mode toggle**
 - 🖼️ **Wallpaper selector**
 - ⌨️ **Multiple keyboard layouts**
-- 🔧 **Config manager**
 - 🔄 **Auto-update script**
 
 ## 🖼️ Screenshot
@@ -53,34 +52,8 @@ hyprctl reload
 
 ## 🛠️ Scripts
 
-- **hypr-manager.sh**: Config manager
 - **wallpaper.sh**: Wallpaper selector
 - **performance-mode.sh**: Performance toggle
 - **update.sh**: Auto-update
 
 ## 🎨 Customization
-
-Edit **~/.config/hypr/hyprland.conf** to change keyboard layout and other settings.
-
-## 📁 File Structure
-
-hyprdots/
-├── install.sh
-├── update.sh
-├── hyprland.conf
-├── scripts/
-├── waybar/
-├── kitty/
-├── mako/
-└── wofi/
-
-## ❓ FAQ
-
-- **Change keyboard layout** in hyprland.conf
-- **Install grim, slurp, swappy** for screenshots
-- **Make scripts executable** if not working
-- **Backups created** in ~/.config/hyprdots-backup-DATE/
-
-## 📄 License
-
-**MIT License**
