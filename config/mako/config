@@ -1,0 +1,33 @@
+font=JetBrainsMono Nerd Font 10
+width=350
+height=100
+margin=20
+padding=15
+border-size=2
+border-radius=12
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#ff3333
+progress-color=over #ff3333
+
+anchor=top-right
+default-timeout=5000
+
+group-by=app-name
+max-visible=5
+
+
+[urgency=low]
+border-color=#ff3333
+default-timeout=3000
+
+[urgency=normal]
+border-color=#ff3333
+default-timeout=5000
+
+[urgency=critical]
+border-color=#ff3333
+background-color=#1e1e2e
+text-color=#f2cdcd
+default-timeout=0
