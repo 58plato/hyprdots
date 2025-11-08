@@ -1,0 +1,242 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0.95);
+    color: #cdd6f4;
+    border-bottom: 1px solid #ff3333;
+    transition: background-color 0.3s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 10px;
+    border: 2px solid #313244;
+    color: #cdd6f4;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
+
+/* CLOCK */
+#clock {
+    color: #ff3333;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+#clock:hover {
+    background: #313244;
+}
+
+/* WORKSPACES */
+#workspaces {
+    background: transparent;
+    margin: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 12px;
+    color: #a6adc8;
+    margin: 3px 0;
+    border-radius: 6px;
+    background: transparent;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+#workspaces button.active {
+    color: #ff3333;
+    background: #313244;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background: #45475a;
+    color: #cdd6f4;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+    background: #313244;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* WINDOW */
+#window {
+    color: #ff3333;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* NETWORK */
+#network {
+    color: #ff3333;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+}
+
+#network.disconnected {
+    color: #a6adc8;
+}
+
+#network:hover {
+    background: #313244;
+}
+
+/* PULSEAUDIO */
+#pulseaudio {
+    color: #ff3333;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+}
+
+#pulseaudio.muted {
+    color: #a6adc8;
+}
+
+#pulseaudio:hover {
+    background: #313244;
+}
+
+/* BATTERY */
+#battery {
+    color: #ff3333;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+    color: #f9e2af;
+    animation: blink-warning 3s infinite;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation: blink-critical 1s infinite;
+}
+
+@keyframes blink-warning {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes blink-critical {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+#battery:hover {
+    background: #313244;
+}
+
+/* TRAY */
+#tray {
+    background: #313244;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+}
+
+#tray > * {
+    padding: 0 6px;
+}
+
+/* WALLPAPER BUTTON */
+#custom-wallpaper {
+    color: #cba6f7;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+#custom-wallpaper:hover {
+    background: #313244;
+    color: #f5c2e7;
+}
+
+/* THEME BUTTON */
+#custom-theme {
+    color: #cba6f7;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+#custom-theme:hover {
+    background: #313244;
+    color: #f5c2e7;
+}
+
+/* PERFORMANCE BUTTON */
+#custom-performance {
+    color: #f9e2af;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+#custom-performance:hover {
+    background: #313244;
+    color: #a6e3a1;
+}
+
+/* POWER BUTTON */
+#custom-power {
+    color: #f38ba8;
+    background: transparent;
+    padding: 0 12px;
+    margin: 3px 5px 3px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+#custom-power:hover {
+    background: #313244;
+    color: #f5c2e7;
+}

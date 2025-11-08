@@ -1,0 +1,146 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 35,
+  "spacing": 4,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  
+  "modules-left": ["clock", "hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["network", "pulseaudio", "battery", "tray", "custom/wallpaper", "custom/theme", "custom/performance", "custom/power"],
+  
+  "clock": {
+    "format": " {:%H:%M}",
+    "format-alt": " {:%d/%m/%Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffeb3b'><b>{}</b></span>",
+        "days": "<span color='#e0e0e0'><b>{}</b></span>",
+        "weeks": "<span color='#9feaf9'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc80'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "1": "1",
+      "2": "2", 
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "urgent": "!",
+      "active": "●",
+      "default": "○"
+    },
+    "on-click": "activate"
+  },
+  
+  "hyprland/window": {
+    "format": "{}",
+    "separator": false,
+    "max-length": 80,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "🌐 $1",
+      "(.*) - Discord": "💬 $1",
+      "(.*) - Spotify": "🎵 $1",
+      "kitty": "🐱 Terminal"
+    }
+  },
+  
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": " Bağlantı Yok",
+    "format-alt": " {ipaddr}",
+    "on-click": "nm-connection-editor",
+    "tooltip-format": "{ifname}: {ipaddr}",
+    "interval": 5
+  },
+  
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Ses Kapalı",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "scroll-step": 5,
+    "smooth-scrolling-threshold": 1
+  },
+  
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 5
+  },
+  
+  "tray": {
+    "spacing": 10,
+    "icon-size": 16,
+    "reverse-direction": false
+  },
+  
+  "custom/wallpaper": {
+    "format": "🎨",
+    "on-click": "~/.config/hypr/scripts/wallpaper.sh",
+    "tooltip": false
+  },
+  
+  "custom/theme": {
+    "format": "🎨",
+    "on-click": "~/.config/hypr/scripts/theme-switcher.sh",
+    "tooltip": false
+  },
+  
+  "custom/performance": {
+    "format": "🚀",
+    "exec": "if [ -f ~/.config/hypr/.performance_mode ]; then echo '⚡'; else echo '🚀'; fi",
+    "exec-interval": 2,
+    "on-click": "~/.config/hypr/scripts/performance-mode.sh",
+    "tooltip": true,
+    "tooltip-format": "Performans Modu: {icon}",
+    "restart-interval": 1
+  },
+  
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "wlogout --protocol layer-shell",
+    "on-click-right": "systemctl poweroff",
+    "tooltip": false
+  }
+}
