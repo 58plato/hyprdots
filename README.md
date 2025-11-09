@@ -5,7 +5,7 @@
 
 ## 🖼️ Screenshot
 
-![Hyprdots Desktop](desktop.png)
+![Hyprdots Desktop](desktop1.png)
 
 
 ## 🎯 Keybinds
