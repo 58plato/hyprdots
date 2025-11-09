@@ -21,4 +21,4 @@
 - **wallpaper.sh**: Wallpaper selector
 - **performance-mode.sh**: Performance toggle
 - **theme-switcher.sh**: Color switcher
-
+- **hybrid-launcher.sh**: Quick actions for wofi
