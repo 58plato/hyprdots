@@ -116,7 +116,7 @@
   },
   
   "custom/wallpaper": {
-    "format": "🎨",
+    "format": "🖼️",
     "on-click": "~/.config/hypr/scripts/wallpaper.sh",
     "tooltip": false
   },
