@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Simple Wallpaper Selector - Wofi Version
-WALLPAPER_DIR="$HOME/Pictures/wallpaper"
+WALLPAPER_DIR="$HOME/wallpaper"
 CURRENT_WALLPAPER_FILE="$HOME/.config/hypr/current-wallpaper"
 
 mkdir -p "$WALLPAPER_DIR"
