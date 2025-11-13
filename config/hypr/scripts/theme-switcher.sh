@@ -2,7 +2,9 @@
 
 # Simple Theme Switcher Script - CLEAN VERSION
 THEME_DIR="$HOME/.config/theme-switcher"
+WALLPAPER_DIR="$HOME/wallpaper"
 mkdir -p "$THEME_DIR"
+mkdir -p "$WALLPAPER_DIR"
 
 # Waybar style template
 cat > "$THEME_DIR/waybar-style-template.css" << 'EOF'
@@ -187,7 +189,7 @@ tooltip label {
 
 /* WALLPAPER BUTTON */
 #custom-wallpaper {
-    color: #cba6f7;
+    color: {{POWER_COLOR}};
     background: transparent;
     padding: 0 12px;
     margin: 3px 0;
@@ -198,12 +200,12 @@ tooltip label {
 
 #custom-wallpaper:hover {
     background: #313244;
-    color: #f5c2e7;
+    color: {{CLOCK_COLOR}};
 }
 
 /* THEME BUTTON */
 #custom-theme {
-    color: #cba6f7;
+    color: {{POWER_COLOR}};
     background: transparent;
     padding: 0 12px;
     margin: 3px 0;
@@ -214,12 +216,12 @@ tooltip label {
 
 #custom-theme:hover {
     background: #313244;
-    color: #f5c2e7;
+    color: {{CLOCK_COLOR}};
 }
 
 /* PERFORMANCE BUTTON */
 #custom-performance {
-    color: #f9e2af;
+    color: {{POWER_COLOR}};
     background: transparent;
     padding: 0 12px;
     margin: 3px 0;
@@ -230,12 +232,12 @@ tooltip label {
 
 #custom-performance:hover {
     background: #313244;
-    color: #a6e3a1;
+    color: {{CLOCK_COLOR}};
 }
 
 /* POWER BUTTON */
 #custom-power {
-    color: #f38ba8;
+    color: {{POWER_COLOR}};
     background: transparent;
     padding: 0 12px;
     margin: 3px 5px 3px 0;
@@ -246,11 +248,11 @@ tooltip label {
 
 #custom-power:hover {
     background: #313244;
-    color: #f5c2e7;
+    color: {{CLOCK_COLOR}};
 }
 EOF
 
-# Themes with "Default" instead of "Mixed"
+# Themes with wallpapers - Cyan removed, Black and White added
 cat > "$THEME_DIR/themes.json" << 'EOF'
 {
   "default": {
@@ -268,6 +270,8 @@ cat > "$THEME_DIR/themes.json" << 'EOF'
     "network_color": "#94e2d5",
     "pulseaudio_color": "#89b4fa",
     "battery_color": "#f9e2af",
+    "power_color": "#f38ba8",
+    "wallpaper": "default.jpg",
     "kvantum_theme": "KvGnome"
   },
   "green": {
@@ -285,6 +289,8 @@ cat > "$THEME_DIR/themes.json" << 'EOF'
     "network_color": "#00ff99",
     "pulseaudio_color": "#00ff99",
     "battery_color": "#00ff99",
+    "power_color": "#00ff99",
+    "wallpaper": "green1.jpg",
     "kvantum_theme": "KvGnomeDark"
   },
   "blue": {
@@ -302,6 +308,8 @@ cat > "$THEME_DIR/themes.json" << 'EOF'
     "network_color": "#33ccff",
     "pulseaudio_color": "#33ccff",
     "battery_color": "#33ccff",
+    "power_color": "#33ccff",
+    "wallpaper": "blue1.jpg",
     "kvantum_theme": "KvGnome"
   },
   "pink": {
@@ -319,6 +327,8 @@ cat > "$THEME_DIR/themes.json" << 'EOF'
     "network_color": "#ff66cc",
     "pulseaudio_color": "#ff66cc",
     "battery_color": "#ff66cc",
+    "power_color": "#ff66cc",
+    "wallpaper": "pink1.jpg",
     "kvantum_theme": "KvOxygen"
   },
   "purple": {
@@ -336,6 +346,8 @@ cat > "$THEME_DIR/themes.json" << 'EOF'
     "network_color": "#cc66ff",
     "pulseaudio_color": "#cc66ff",
     "battery_color": "#cc66ff",
+    "power_color": "#cc66ff",
+    "wallpaper": "purple1.jpg",
     "kvantum_theme": "KvSimplicityDarkLight"
   },
   "orange": {
@@ -353,6 +365,8 @@ cat > "$THEME_DIR/themes.json" << 'EOF'
     "network_color": "#ff9900",
     "pulseaudio_color": "#ff9900",
     "battery_color": "#ff9900",
+    "power_color": "#ff9900",
+    "wallpaper": "orange1.jpg",
     "kvantum_theme": "KvMojaveMixed1"
   },
   "red": {
@@ -370,30 +384,53 @@ cat > "$THEME_DIR/themes.json" << 'EOF'
     "network_color": "#ff3333",
     "pulseaudio_color": "#ff3333",
     "battery_color": "#ff3333",
+    "power_color": "#ff3333",
+    "wallpaper": "red1.png",
     "kvantum_theme": "KvAmbiance"
   },
-  "cyan": {
-    "hypr_border": "rgba(00ffffee) rgba(00ccccee) 45deg",
-    "kitty_foreground": "#00ffff",
+  "black": {
+    "hypr_border": "rgba(333333ee) rgba(000000ee) 45deg",
+    "kitty_foreground": "#333333",
     "kitty_background": "#1e1e2e",
-    "mako_border": "#00ffff",
+    "mako_border": "#333333",
     "mako_bg": "#1e1e2e",
-    "mako_progress": "#00ffff",
+    "mako_progress": "#333333",
     "waybar_bg": "rgba(21, 18, 27, 0.95)",
-    "waybar_border": "#00ffff",
-    "clock_color": "#00ffff",
-    "workspace_active": "#00ffff",
-    "window_color": "#00ffff",
-    "network_color": "#00ffff",
-    "pulseaudio_color": "#00ffff",
-    "battery_color": "#00ffff",
+    "waybar_border": "#333333",
+    "clock_color": "#333333",
+    "workspace_active": "#333333",
+    "window_color": "#333333",
+    "network_color": "#333333",
+    "pulseaudio_color": "#333333",
+    "battery_color": "#333333",
+    "power_color": "#333333",
+    "wallpaper": "black1.png",
+    "kvantum_theme": "KvAmbiance"
+  },
+  "white": {
+    "hypr_border": "rgba(ffffffee) rgba(ccccceee) 45deg",
+    "kitty_foreground": "#ffffff",
+    "kitty_background": "#1e1e2e",
+    "mako_border": "#ffffff",
+    "mako_bg": "#1e1e2e",
+    "mako_progress": "#ffffff",
+    "waybar_bg": "rgba(21, 18, 27, 0.95)",
+    "waybar_border": "#ffffff",
+    "clock_color": "#ffffff",
+    "workspace_active": "#ffffff",
+    "window_color": "#ffffff",
+    "network_color": "#ffffff",
+    "pulseaudio_color": "#ffffff",
+    "battery_color": "#ffffff",
+    "power_color": "#ffffff",
+    "wallpaper": "white1.jpg",
     "kvantum_theme": "KvSimplicity"
   }
 }
 EOF
 
-# Show theme selection - SIMPLE VERSION
-selected_theme=$(echo -e "💠 Default\n🟢 Green\n🔵 Blue\n💖 Pink\n💜 Purple\n🟠 Orange\n🔴 Red\n🌀 Cyan" | wofi --dmenu --prompt "🎨 Select Theme" --height 300 --width 350)
+# Show theme selection - Cyan removed, Black and White added
+selected_theme=$(echo -e "💠 Default\n🟢 Green\n🔵 Blue\n💖 Pink\n💜 Purple\n🟠 Orange\n🔴 Red\n⬛ Black\n⬜ White" | wofi --dmenu --prompt "🎨 Select Theme" --height 300 --width 350)
 
 if [[ -z "$selected_theme" ]]; then
     exit 0
@@ -408,62 +445,107 @@ case "$selected_theme" in
     "💜 Purple") theme="purple" ;;
     "🟠 Orange") theme="orange" ;;
     "🔴 Red") theme="red" ;;
-    "🌀 Cyan") theme="cyan" ;;
+    "⬛ Black") theme="black" ;;
+    "⬜ White") theme="white" ;;
     *) exit 1 ;;
 esac
 
 # Get theme data
 theme_data=$(jq -r ".$theme" "$THEME_DIR/themes.json")
 
-# Apply changes to all configs
-if [[ -f "$HOME/.config/hypr/hyprland.conf" ]]; then
-    sed -i "s|col.active_border = .*|col.active_border = $(echo "$theme_data" | jq -r '.hypr_border')|g" "$HOME/.config/hypr/hyprland.conf"
-fi
+# Apply changes to all configs - PARALLEL EXECUTION FOR SPEED
+{
+    # Hyprland
+    if [[ -f "$HOME/.config/hypr/hyprland.conf" ]]; then
+        sed -i "s|col.active_border = .*|col.active_border = $(echo "$theme_data" | jq -r '.hypr_border')|g" "$HOME/.config/hypr/hyprland.conf"
+    fi
 
-if [[ -f "$HOME/.config/kitty/kitty.conf" ]]; then
-    sed -i "s|^foreground .*|foreground $(echo "$theme_data" | jq -r '.kitty_foreground')|" "$HOME/.config/kitty/kitty.conf"
-    sed -i "s|^background .*|background $(echo "$theme_data" | jq -r '.kitty_background')|" "$HOME/.config/kitty/kitty.conf"
-fi
+    # Kitty
+    if [[ -f "$HOME/.config/kitty/kitty.conf" ]]; then
+        sed -i "s|^foreground .*|foreground $(echo "$theme_data" | jq -r '.kitty_foreground')|" "$HOME/.config/kitty/kitty.conf"
+        sed -i "s|^background .*|background $(echo "$theme_data" | jq -r '.kitty_background')|" "$HOME/.config/kitty/kitty.conf"
+    fi
 
-if [[ -f "$HOME/.config/mako/config" ]]; then
-    sed -i "s|border-color=.*|border-color=$(echo "$theme_data" | jq -r '.mako_border')|" "$HOME/.config/mako/config"
-    sed -i "s|background-color=.*|background-color=$(echo "$theme_data" | jq -r '.mako_bg')|" "$HOME/.config/mako/config"
-    sed -i "s|progress-color=.*|progress-color=over $(echo "$theme_data" | jq -r '.mako_progress')|" "$HOME/.config/mako/config"
-fi
+    # Mako
+    if [[ -f "$HOME/.config/mako/config" ]]; then
+        sed -i "s|border-color=.*|border-color=$(echo "$theme_data" | jq -r '.mako_border')|" "$HOME/.config/mako/config"
+        sed -i "s|background-color=.*|background-color=$(echo "$theme_data" | jq -r '.mako_bg')|" "$HOME/.config/mako/config"
+        sed -i "s|progress-color=.*|progress-color=over $(echo "$theme_data" | jq -r '.mako_progress')|" "$HOME/.config/mako/config"
+    fi
 
-if [[ -f "$THEME_DIR/waybar-style-template.css" ]]; then
-    waybar_bg=$(echo "$theme_data" | jq -r '.waybar_bg')
-    waybar_border=$(echo "$theme_data" | jq -r '.waybar_border')
-    clock_color=$(echo "$theme_data" | jq -r '.clock_color')
-    workspace_active=$(echo "$theme_data" | jq -r '.workspace_active')
-    window_color=$(echo "$theme_data" | jq -r '.window_color')
-    network_color=$(echo "$theme_data" | jq -r '.network_color')
-    pulseaudio_color=$(echo "$theme_data" | jq -r '.pulseaudio_color')
-    battery_color=$(echo "$theme_data" | jq -r '.battery_color')
+    # Waybar
+    if [[ -f "$THEME_DIR/waybar-style-template.css" ]]; then
+        waybar_bg=$(echo "$theme_data" | jq -r '.waybar_bg')
+        waybar_border=$(echo "$theme_data" | jq -r '.waybar_border')
+        clock_color=$(echo "$theme_data" | jq -r '.clock_color')
+        workspace_active=$(echo "$theme_data" | jq -r '.workspace_active')
+        window_color=$(echo "$theme_data" | jq -r '.window_color')
+        network_color=$(echo "$theme_data" | jq -r '.network_color')
+        pulseaudio_color=$(echo "$theme_data" | jq -r '.pulseaudio_color')
+        battery_color=$(echo "$theme_data" | jq -r '.battery_color')
+        power_color=$(echo "$theme_data" | jq -r '.power_color')
+        
+        cat "$THEME_DIR/waybar-style-template.css" | \
+            sed "s|{{WAYBAR_BG}}|${waybar_bg}|g" | \
+            sed "s|{{WAYBAR_BORDER}}|${waybar_border}|g" | \
+            sed "s|{{CLOCK_COLOR}}|${clock_color}|g" | \
+            sed "s|{{WORKSPACE_ACTIVE}}|${workspace_active}|g" | \
+            sed "s|{{WINDOW_COLOR}}|${window_color}|g" | \
+            sed "s|{{NETWORK_COLOR}}|${network_color}|g" | \
+            sed "s|{{PULSEAUDIO_COLOR}}|${pulseaudio_color}|g" | \
+            sed "s|{{BATTERY_COLOR}}|${battery_color}|g" | \
+            sed "s|{{POWER_COLOR}}|${power_color}|g" > "$HOME/.config/waybar/style.css"
+    fi
+} &
+
+# Change wallpaper with SMOOTH top-to-bottom animation
+wallpaper=$(echo "$theme_data" | jq -r '.wallpaper')
+wallpaper_path="$WALLPAPER_DIR/$wallpaper"
+
+if [[ -f "$wallpaper_path" ]]; then
+    # Use swww with smooth top-to-bottom wipe animation
+    swww img "$wallpaper_path" \
+        --transition-type wipe \
+        --transition-angle 90 \
+        --transition-step 45 \
+        --transition-fps 60 \
+        --transition-duration 0.8 &
     
-    cat "$THEME_DIR/waybar-style-template.css" | \
-        sed "s|{{WAYBAR_BG}}|${waybar_bg}|g" | \
-        sed "s|{{WAYBAR_BORDER}}|${waybar_border}|g" | \
-        sed "s|{{CLOCK_COLOR}}|${clock_color}|g" | \
-        sed "s|{{WORKSPACE_ACTIVE}}|${workspace_active}|g" | \
-        sed "s|{{WINDOW_COLOR}}|${window_color}|g" | \
-        sed "s|{{NETWORK_COLOR}}|${network_color}|g" | \
-        sed "s|{{PULSEAUDIO_COLOR}}|${pulseaudio_color}|g" | \
-        sed "s|{{BATTERY_COLOR}}|${battery_color}|g" > "$HOME/.config/waybar/style.css"
+    echo "✅ Wallpaper changing with smooth animation: $wallpaper"
+else
+    echo "⚠️  Wallpaper not found: $wallpaper_path"
 fi
 
+# Kvantum
 if command -v kvantummanager &> /dev/null; then
     kvantum_theme=$(echo "$theme_data" | jq -r '.kvantum_theme')
-    kvantummanager --set "$kvantum_theme" 2>/dev/null || true
+    kvantummanager --set "$kvantum_theme" 2>/dev/null || true &
 fi
 
-# Reload applications
-hyprctl reload
-pkill -USR1 kitty
-pkill waybar && waybar &
-makoctl reload
+# Wait for all background processes
+wait
+
+# Reload applications - PARALLEL FOR SPEED
+{
+    hyprctl reload
+} &
+
+{
+    pkill -USR1 kitty
+} &
+
+{
+    pkill waybar && waybar &
+} &
+
+{
+    makoctl reload
+} &
+
+# Wait for reloads
+wait
 
 # Notification
-notify-send "🎨 Theme Changed" "Applied $theme theme" -t 3000
+notify-send "🎨 Theme Changed" "Applied $theme theme" -t 1500
 
 echo "✅ Theme switched to $theme"
