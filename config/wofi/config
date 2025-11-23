@@ -1,0 +1,15 @@
+show=drun
+prompt=made by plato
+width=600
+height=400
+insensitive=true
+allow_markup=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+terminal=kitty
+allow_images=true
+image_size=24
+always_parse_args=true
+exec_search=true
